@@ -1,0 +1,45 @@
+#!/usr/bin/env ansible-playbook
+#
+---
+
+- name: Manage web servers
+  hosts: web
+  become: true
+  vars:
+    package: httpd
+    service: httpd
+  roles:
+    - role: webserver
+      tags:
+        - webserver
+
+
+- name: Manage PostgreSQL
+  hosts: db
+  become: true
+  tags:
+    - postgres
+    - database
+  roles:
+    - role: dockpack.base_postgres
+
+- name: Manage Apache MQ
+  hosts: amq
+  become: true
+  tags:
+    - amq
+  roles:
+    - role: dockpack.base_utils
+      base_utils:
+        - unzip
+    - role: dockpack.base_amq
+
+- name: Manage development
+  hosts: development
+  become: true
+  tags:
+    - development
+  roles:
+    - role: dockpack.base_gcc
+    - role: dockpack.base_java8
+    - role: dockpack.base_maven
