@@ -15,5 +15,5 @@ ansible-galaxy install -p ./galaxy -r roles/requirements.yml
 ./playbook -v --ask-vault-pass
 ```
 
-The password for the vault is 'password'.
+The password for the vault is 's3cr3t'.
 
