@@ -1,0 +1,23 @@
+---
+
+- src: https://github.com/playingfield/ansible_role_web.git
+  name: webserver
+
+# middleware
+- src: dockpack.base_amq
+- src: dockpack.base_etcd
+- src: dockpack.base_mariadb
+- src: dockpack.base_postgres
+- src: dockpack.base_redis
+- src: dockpack.base_utils
+
+# programming
+- src: dockpack.base_ant
+- src: dockpack.base_arrow
+- src: dockpack.base_boost
+- src: dockpack.base_clang
+- src: dockpack.base_cmake
+- src: dockpack.base_gcc
+- src: dockpack.base_java8
+- src: dockpack.base_maven
+- src: dockpack.base_python
