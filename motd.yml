@@ -1,0 +1,18 @@
+#!/usr/bin/env ansible-playbook
+---
+# Usage: ./motd.yml -l web -i <inventory>
+
+- name: Distribute message of the day
+  hosts: all
+  become: true
+  gather_facts: false
+
+  tasks:
+
+    - name: Copy motd from files
+      ansible.builtin.copy:
+        src: motd
+        dest: /etc/
+        owner: root
+        group: root
+        mode: '0644'
