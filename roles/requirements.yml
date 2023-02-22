@@ -2,7 +2,6 @@
 
 - src: https://github.com/playingfield/ansible_role_web.git
   name: webserver
-
 - src: dockpack.base_amq
 - src: dockpack.base_postgres
 - src: dockpack.base_utils
