@@ -1,6 +1,6 @@
 #!/usr/bin/env ansible-playbook
 ---
-# Create a strong ssh-key: ssh-keygen -t id_ed25519 -a 500 -C $USER
+# Create a strong and fast ssh-key: ssh-keygen -t id_ed25519 -a 500 -C $USER
 # Usage: ./ssh-copy-id.yml -k -i <inventory>
 
 - name: Distribute public ssh-key to ansible inventory
