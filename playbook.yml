@@ -37,9 +37,11 @@
 - name: Manage development
   hosts: development
   become: true
-  tags:
-    - development
   roles:
     - role: dockpack.base_gcc
     - role: dockpack.base_java8
+      tags:
+        - java
     - role: dockpack.base_maven
+      tags:
+        - java
